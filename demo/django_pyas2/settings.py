@@ -65,7 +65,7 @@ PYAS2 = {
     'LOGCONSOLE' : True,
     'LOGCONSOLELEVEL' : 'DEBUG',
     'MAXRETRIES': 5,
-    'MDNURL' : 'http://localhost:8080/as2/as2receive',
+    'MDNURL' : 'http://localhost:8080/pyas2/as2receive',
     'ASYNCMDNWAIT' : 30,
     'MAXARCHDAYS' : 30,
 }
