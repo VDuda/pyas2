@@ -4,7 +4,6 @@ RUN apt-get update && apt-get install build-essential libssl-dev swig 2.0.4 post
 
 RUN mkdir -p /tmp/
 WORKDIR /tmp/
-ADD . /tmp/
 
 RUN wget https://gitlab.com/m2crypto/m2crypto/-/archive/master/m2crypto-master.tar.gz
 RUN tar zxf m2crypto-master.tar.gz
@@ -14,6 +13,7 @@ RUN pip install django pyinotify requests pyasn1 cherrypy==8.9.1
 
 run pip install psycopg2-binary
 
+ADD . /tmp/
 RUN python setup.py install # This should use the local master install instead
 
 RUN mkdir -p /app/django_pyas2/
