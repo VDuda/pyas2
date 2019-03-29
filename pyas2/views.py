@@ -131,7 +131,7 @@ class PayloadView(View):
                 elif payload.content_type == 'application/XML':
                     file_obj['content'] = viewlib.indent_xml(file_obj['content'])
                 elif payload.content_type == 'text/CSV':
-                    file_obj['content'] = viewlib.index_csv(file_obj['content'])
+                    file_obj['content'] = viewlib.indent_csv(file_obj['content'])
                 file_obj['direction'] = message.get_direction_display()
                 file_obj['type'] = 'AS2 MESSAGE'
                 file_obj['headers'] = dict(HeaderParser().parsestr(message.headers or '').items())
