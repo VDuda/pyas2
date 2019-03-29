@@ -40,12 +40,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+MANAGERS = (    #bots will send error reports to the MANAGERS
+    ('name_manager', 'info@thelightwalk.com'),
+    )
+
+EMAIL_HOST = 'smtp.gmail.com'             #Default: 'localhost'
+EMAIL_PORT = '587'             #Default: 25
+EMAIL_USE_TLS = True       #Default: False
+EMAIL_HOST_USER = 'info@thelightwalk.com'        #Default: ''. Username to use for the SMTP server defined in EMAIL_HOST. If empty, Django won't attempt authentication.
+EMAIL_HOST_PASSWORD = 'kolodno2014'    #Default: ''. PASSWORD to use for the SMTP server defined in EMAIL_HOST. If empty, Django won't attempt authentication.
+SERVER_EMAIL = 'info@thelightwalk.com'           #Sender of bots error reports. Default: 'root@localhost'
+EMAIL_SUBJECT_PREFIX = 'TheLightWalk AS2'   #This is prepended on email subject.
+
 PYAS2 = {
     'ENVIRONMENT' : 'production',
     'PORT' : 8080,
     'SSLCERTIFICATE' : None,
     'SSLPRIVATEKEY' : None,
-    'DATADIR' : '/data/',
+    'DATADIR' : '/app/django_pyas2/data/',
     # 'PYTHONPATH' : '/path_to_python/python',
     'ENVIRONMENTTEXT' : 'TheLightWalk',
     'ENVIRONMENTTEXTCOLOR' : 'Black',
